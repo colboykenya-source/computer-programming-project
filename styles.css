@@ -178,6 +178,11 @@ textarea:focus {
   outline-offset: 1px;
 }
 
+input:user-invalid,
+textarea:user-invalid {
+  border-color: #c62828;
+}
+
 button {
   border: 0;
   border-radius: 10px;

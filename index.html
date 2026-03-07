@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Caroline Muiruri portfolio featuring web development projects and contact details.">
+  <meta name="theme-color" content="#17307a">
   <title>Caroline Muiruri | Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -10,7 +12,9 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="site-header">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header" id="top">
     <div class="container nav-wrap">
       <div>
         <h1>Caroline Muiruri</h1>
@@ -24,56 +28,63 @@
     </div>
   </header>
 
-  <main class="container">
-    <section id="about" class="card">
+  <main id="main-content" class="container">
+    <section id="about" class="card" aria-labelledby="about-title">
       <p class="tag">&lt;about/&gt;</p>
-      <h2>About Me</h2>
+      <h2 id="about-title">About Me</h2>
       <p>
         Hello! I'm Caroline, a beginner web developer passionate about creating websites
         using HTML, CSS, and GitHub. I enjoy turning ideas into clean and responsive pages.
       </p>
     </section>
 
-    <section id="projects" class="card">
+    <section id="projects" class="card" aria-labelledby="projects-title">
       <p class="tag">&lt;projects/&gt;</p>
-      <h2>My Projects</h2>
+      <h2 id="projects-title">My Projects</h2>
       <div class="projects">
         <article class="project-card">
           <h3>Portfolio Website</h3>
           <p>A personal portfolio built with HTML and CSS.</p>
+          <a class="project-link" href="#top">Preview</a>
         </article>
         <article class="project-card">
           <h3>Flexbox Practice</h3>
           <p>Exercises to master layout and alignment with Flexbox.</p>
+          <a class="project-link" href="https://flexboxfroggy.com/" target="_blank" rel="noopener noreferrer">View Resource</a>
         </article>
         <article class="project-card">
           <h3>Snake Game</h3>
           <p>A beginner JavaScript game focused on logic and interaction.</p>
+          <a class="project-link" href="#contact">Request Demo</a>
         </article>
       </div>
     </section>
 
-    <section id="contact" class="card">
+    <section id="contact" class="card" aria-labelledby="contact-title">
       <p class="tag">&lt;contact/&gt;</p>
-      <h2>Contact Me</h2>
+      <h2 id="contact-title">Contact Me</h2>
       <form class="contact-form">
         <label for="name">Name</label>
-        <input id="name" type="text" placeholder="Your name">
+        <input id="name" name="name" type="text" placeholder="Your name" autocomplete="name" minlength="2" required>
 
         <label for="email">Email</label>
-        <input id="email" type="email" placeholder="you@example.com">
+        <input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required>
 
         <label for="message">Message</label>
-        <textarea id="message" rows="4" placeholder="Write your message here..."></textarea>
+        <textarea id="message" name="message" rows="4" placeholder="Write your message here..." minlength="10" required></textarea>
 
         <button type="submit">Send Message</button>
       </form>
-      <p class="contact-links">GitHub: github.com/yourusername</p>
+      <p class="contact-links">GitHub: <a href="https://github.com/colboykenya-source" target="_blank" rel="noopener noreferrer">colboykenya-source</a></p>
     </section>
   </main>
 
+  <button class="back-to-top" type="button" aria-label="Back to top">Top</button>
+
   <footer>
-    <p>© 2026 Caroline Muiruri</p>
+    <p>© <span id="year"></span> Caroline Muiruri</p>
   </footer>
+
+  <script src="script.js" defer></script>
 </body>
 </html>

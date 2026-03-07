@@ -2,6 +2,7 @@ const sections = document.querySelectorAll("main section[id]");
 const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
 const backToTopButton = document.querySelector(".back-to-top");
 const year = document.getElementById("year");
+const contactForm = document.querySelector(".contact-form");
 
 if (year) {
   year.textContent = new Date().getFullYear();
@@ -36,6 +37,18 @@ window.addEventListener("scroll", () => {
 if (backToTopButton) {
   backToTopButton.addEventListener("click", () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+}
+
+if (contactForm) {
+  contactForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    if (!contactForm.checkValidity()) {
+      contactForm.reportValidity();
+      return;
+    }
+    alert("Thanks, your message has been captured.");
+    contactForm.reset();
   });
 }
 
